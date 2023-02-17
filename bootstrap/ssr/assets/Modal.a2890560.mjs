@@ -1,4 +1,4 @@
-import { S as SectionTitle } from "./SectionTitle.d5bd99a3.mjs";
+import { S as SectionTitle } from "./SectionTitle.d544f27b.mjs";
 import { a as jsxs, j as jsx } from "../ssr.mjs";
 import { Transition, Dialog } from "@headlessui/react";
 import classNames from "clsx";

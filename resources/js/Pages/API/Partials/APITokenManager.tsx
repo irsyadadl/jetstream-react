@@ -1,7 +1,6 @@
-import { useForm, usePage } from '@inertiajs/react';
+import { useForm } from '@inertiajs/react';
 import classNames from 'clsx';
 import React, { useState } from 'react';
-import useRoute from '@/Hooks/useRoute';
 import ActionMessage from '@/Components/ActionMessage';
 import ActionSection from '@/Components/ActionSection';
 import Checkbox from '@/Components/Checkbox';
@@ -16,6 +15,8 @@ import TextInput from '@/Components/TextInput';
 import SecondaryButton from '@/Components/SecondaryButton';
 import SectionBorder from '@/Components/SectionBorder';
 import { ApiToken } from '@/types';
+import route from 'ziggy-js';
+import useTypedPage from '@/Hooks/useTypedPage';
 
 interface Props {
     tokens: ApiToken[];
@@ -24,7 +25,6 @@ interface Props {
 }
 
 export default function APITokenManager({ tokens, availablePermissions, defaultPermissions }: Props) {
-    const route = useRoute();
     const createApiTokenForm = useForm({
         name: '',
         permissions: defaultPermissions,
@@ -36,7 +36,7 @@ export default function APITokenManager({ tokens, availablePermissions, defaultP
     const [displayingToken, setDisplayingToken] = useState(false);
     const [managingPermissionsFor, setManagingPermissionsFor] = useState<ApiToken | null>(null);
     const [apiTokenBeingDeleted, setApiTokenBeingDeleted] = useState<ApiToken | null>(null);
-    const page = usePage<any>();
+    const { jetstream } = useTypedPage().props;
 
     function createApiToken() {
         createApiTokenForm.post(route('api-tokens.store'), {
@@ -206,7 +206,7 @@ export default function APITokenManager({ tokens, availablePermissions, defaultP
                     <div>Please copy your new API token. For your security, it won't be shown again.</div>
 
                     <div className='mt-4 rounded bg-gray-100 px-4 py-2 font-mono text-sm text-gray-500'>
-                        {page.props?.jetstream?.flash?.token}
+                        {jetstream?.flash?.token}
                     </div>
                 </DialogModal.Content>
                 <DialogModal.Footer>

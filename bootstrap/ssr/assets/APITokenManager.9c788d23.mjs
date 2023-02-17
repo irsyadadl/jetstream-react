@@ -1,33 +1,33 @@
-import { useForm, usePage } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
 import classNames from "clsx";
 import { useState } from "react";
-import { u as useRoute, a as jsxs, F as Fragment, j as jsx } from "../ssr.mjs";
-import { A as ActionMessage } from "./ActionMessage.1f23d4e7.mjs";
-import { A as ActionSection } from "./Modal.9382fc3d.mjs";
-import { C as Checkbox } from "./Checkbox.29d39462.mjs";
-import { C as ConfirmationModal } from "./ConfirmationModal.9b0cc550.mjs";
-import { D as DangerButton } from "./DangerButton.c63b93ef.mjs";
-import { D as DialogModal } from "./DialogModal.3c0aea45.mjs";
-import { F as FormSection } from "./FormSection.49849577.mjs";
-import { T as TextInput, I as InputError } from "./TextInput.93905041.mjs";
-import { I as InputLabel } from "./InputLabel.e9197da5.mjs";
-import { P as PrimaryButton } from "./PrimaryButton.7df85486.mjs";
-import { S as SecondaryButton } from "./SecondaryButton.78d66b17.mjs";
-import { S as SectionBorder } from "./SectionBorder.83091097.mjs";
+import { A as ActionMessage } from "./ActionMessage.c3b49322.mjs";
+import { A as ActionSection } from "./Modal.a2890560.mjs";
+import { C as Checkbox } from "./Checkbox.c9d6708d.mjs";
+import { C as ConfirmationModal } from "./ConfirmationModal.3cb0771f.mjs";
+import { D as DangerButton } from "./DangerButton.e26c0380.mjs";
+import { D as DialogModal } from "./DialogModal.b8b793ce.mjs";
+import { F as FormSection } from "./FormSection.7bacf247.mjs";
+import { T as TextInput, I as InputError } from "./TextInput.58f5ea4e.mjs";
+import { I as InputLabel } from "./InputLabel.25258eb4.mjs";
+import { P as PrimaryButton } from "./PrimaryButton.94265e15.mjs";
+import { S as SecondaryButton } from "./SecondaryButton.339df098.mjs";
+import { S as SectionBorder } from "./SectionBorder.78c61d02.mjs";
+import route from "ziggy-js";
+import { u as useTypedPage } from "./useTypedPage.bca7ae03.mjs";
+import { a as jsxs, F as Fragment, j as jsx } from "../ssr.mjs";
+import "@headlessui/react";
+import "./SectionTitle.d544f27b.mjs";
+import "react-dom";
 import "react-dom/server";
 import "@inertiajs/react/server";
-import "ziggy-js";
 import "react/jsx-runtime";
-import "@headlessui/react";
-import "./SectionTitle.d5bd99a3.mjs";
-import "react-dom";
 function APITokenManager({
   tokens,
   availablePermissions,
   defaultPermissions
 }) {
-  var _a, _b, _c;
-  const route = useRoute();
+  var _a;
   const createApiTokenForm = useForm({
     name: "",
     permissions: defaultPermissions
@@ -39,7 +39,9 @@ function APITokenManager({
   const [displayingToken, setDisplayingToken] = useState(false);
   const [managingPermissionsFor, setManagingPermissionsFor] = useState(null);
   const [apiTokenBeingDeleted, setApiTokenBeingDeleted] = useState(null);
-  const page = usePage();
+  const {
+    jetstream
+  } = useTypedPage().props;
   function createApiToken() {
     createApiTokenForm.post(route("api-tokens.store"), {
       preserveScroll: true,
@@ -178,7 +180,7 @@ function APITokenManager({
           children: "Please copy your new API token. For your security, it won't be shown again."
         }), /* @__PURE__ */ jsx("div", {
           className: "mt-4 rounded bg-gray-100 px-4 py-2 font-mono text-sm text-gray-500",
-          children: (_c = (_b = (_a = page.props) == null ? void 0 : _a.jetstream) == null ? void 0 : _b.flash) == null ? void 0 : _c.token
+          children: (_a = jetstream == null ? void 0 : jetstream.flash) == null ? void 0 : _a.token
         })]
       }), /* @__PURE__ */ jsx(DialogModal.Footer, {
         children: /* @__PURE__ */ jsx(SecondaryButton, {

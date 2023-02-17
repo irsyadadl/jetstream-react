@@ -1,5 +1,5 @@
 import { a as jsxs, j as jsx } from "../ssr.mjs";
-import { A as AppLayout } from "./AppLayout.ac5a6ee7.mjs";
+import { A as AppLayout } from "./AppLayout.7f7e46f9.mjs";
 import "react-dom/server";
 import "@inertiajs/react";
 import "@inertiajs/react/server";

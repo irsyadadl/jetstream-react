@@ -2,21 +2,21 @@ import { useForm, router } from "@inertiajs/react";
 import axios from "axios";
 import classNames from "clsx";
 import { useState, useRef } from "react";
-import { A as ActionSection } from "./Modal.9382fc3d.mjs";
-import { u as useRoute, a as jsxs, j as jsx } from "../ssr.mjs";
-import { D as DialogModal } from "./DialogModal.3c0aea45.mjs";
-import { T as TextInput, I as InputError } from "./TextInput.93905041.mjs";
-import { P as PrimaryButton } from "./PrimaryButton.7df85486.mjs";
-import { S as SecondaryButton } from "./SecondaryButton.78d66b17.mjs";
-import { D as DangerButton } from "./DangerButton.c63b93ef.mjs";
-import { I as InputLabel } from "./InputLabel.e9197da5.mjs";
+import { A as ActionSection } from "./Modal.a2890560.mjs";
+import { D as DialogModal } from "./DialogModal.b8b793ce.mjs";
+import { T as TextInput, I as InputError } from "./TextInput.58f5ea4e.mjs";
+import { P as PrimaryButton } from "./PrimaryButton.94265e15.mjs";
+import { S as SecondaryButton } from "./SecondaryButton.339df098.mjs";
+import route from "ziggy-js";
+import { a as jsxs, j as jsx } from "../ssr.mjs";
+import { D as DangerButton } from "./DangerButton.e26c0380.mjs";
+import { I as InputLabel } from "./InputLabel.25258eb4.mjs";
 import { u as useTypedPage } from "./useTypedPage.bca7ae03.mjs";
-import "./SectionTitle.d5bd99a3.mjs";
+import "./SectionTitle.d544f27b.mjs";
 import "@headlessui/react";
 import "react-dom";
 import "react-dom/server";
 import "@inertiajs/react/server";
-import "ziggy-js";
 import "react/jsx-runtime";
 function ConfirmsPassword({
   title = "Confirm Password",
@@ -25,7 +25,6 @@ function ConfirmsPassword({
   onConfirm,
   children
 }) {
-  const route = useRoute();
   const [confirmingPassword, setConfirmingPassword] = useState(false);
   const [form, setForm] = useState({
     password: "",

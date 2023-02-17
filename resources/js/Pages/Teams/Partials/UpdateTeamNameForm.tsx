@@ -1,4 +1,3 @@
-import useRoute from '@/Hooks/useRoute';
 import ActionMessage from '@/Components/ActionMessage';
 import FormSection from '@/Components/FormSection';
 import InputError from '@/Components/InputError';
@@ -9,6 +8,7 @@ import { JetstreamTeamPermissions, Team, User } from '@/types';
 import { useForm } from '@inertiajs/react';
 import classNames from 'clsx';
 import React from 'react';
+import route from 'ziggy-js';
 
 interface Props {
     team: Team & { owner: User };
@@ -16,7 +16,6 @@ interface Props {
 }
 
 export default function UpdateTeamNameForm({ team, permissions }: Props) {
-    const route = useRoute();
     const form = useForm({
         name: team.name,
     });

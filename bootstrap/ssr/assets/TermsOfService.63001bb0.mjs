@@ -1,4 +1,4 @@
-import { A as AuthenticationCardLogo } from "./AuthenticationCardLogo.f435ffa2.mjs";
+import { A as AuthenticationCardLogo } from "./AuthenticationCardLogo.1e3fa42b.mjs";
 import { Head } from "@inertiajs/react";
 import { a as jsxs, j as jsx } from "../ssr.mjs";
 import "react-dom/server";
